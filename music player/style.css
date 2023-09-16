@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Mont;
+    src: url('font/Mont-Regular.ttf');
+    src: url('font/Mont-SemiBold.ttf') format('embedded-opentype'),
+         url('font/Mont-ExtraLight.ttf') ,
+         url('font/Mont-Light.ttf') ,
+         url('font/Mont-Thin.ttf') ,
+         url('font/Mont-Heavy.ttf'),
+         url('font/Mont-Black.ttf') format('truetype');
+    font-weight: normal;
+  }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-family: Nunito, sans-serif; */
+    font-family: Mont;
+}
+
+.bg-container {
+    position: fixed;
+     top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+}
+
+.bg-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 55%;
+    min-height: 55%;
+    margin: auto;
+    filter: blur(50px);
+}
+
+.player-container {
+    position: relative;
+    width: 400px;
+    height: 550px;
+    top: 100px;
+    background-color: #EDEDED;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.img-container {
+    width: 230px;
+    height: 230px;
+    left: 85px;
+    top: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-container img {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.5);
+    transition: .7s;
+}
+
+.img-container img.active {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: .7s;
+}
+
+
+.img-container img.anima {
+    animation: anima 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes anima {
+    
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+.info {
+ margin-top: 90px;
+}
+
+h2 {
+    text-align: center ;
+    font-size: 30px;
+}
+h3 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.progress-container {
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 35px 20px;
+    height: 4px;
+    width: 90%;
+  }
+  
+  .progress {
+    background: #DA0037;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+  }
+  
+  .duration-wrapper {
+    color: black;
+    font-size: 20px;
+    position: relative;
+    top: -35px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  .controls-container {
+    position: relative;
+    text-align: center;
+    font-size: 35px;
+    top: -20px;
+    left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bi {
+    margin-right: 20px;
+    cursor: pointer;
+    color: #444444;
+  }
+
+  .bi:hover {
+    color: #DA0037;
+    filter: brightness(80%);
+  }
+
+
+  .play-list {
+    position: absolute;
+    top: 550px;
+    width: 400px;
+    height: 550px;
+    background-color: #EDEDED;
+    border-radius: 20px;
+    color: #171717;
+    z-index: 99;
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: top .7s;
+  }
+
+.play-list h2 {
+    font-size: 30px;
+}
+
+.play-list h3 {
+    font-size: 15px;
+    text-align: start;
+}
+
+  .play-list .play-music{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    align-items:center ;
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid #EDEDED;
+    border-radius: 15px;
+    margin-top: 20px;
+    background-color: #EDEDED;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+
+  .play-music .bi-play-circle-fill {
+    font-size: 35px;
+    color: #171717;
+  }
+  .play-music:hover .bi-play-circle-fill{
+    transition: .7s;
+    color: #DA0037;
+  }
+  .play-music:hover {
+    transition: .7s;
+    background-color: #171717;
+    border:  2px solid #171717;
+    color: #EDEDED;
+  }

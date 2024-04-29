@@ -22,6 +22,7 @@ body {
     align-items: center;
     /* font-family: Nunito, sans-serif; */
     font-family: Mont;
+    min-height: 100svh;
 }
 
 .bg-container {
@@ -46,14 +47,14 @@ body {
 }
 
 .player-container {
-    position: relative;
+    position: fixed;
     width: 400px;
     height: 550px;
-    top: 100px;
     background-color: #EDEDED;
     border-radius: 20px;
     box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+    margin-inline: 100px;
 }
 
 .img-container {
@@ -91,7 +92,6 @@ body {
 }
 
 @keyframes anima {
-    
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
 }
@@ -215,3 +215,13 @@ h3 {
     border:  2px solid #171717;
     color: #EDEDED;
   }
+
+@media screen and (max-width: 550px) {
+  .player-container {
+    width: 350px;
+  }
+  .img-container{
+    left: 67px;
+  }
+  
+}
